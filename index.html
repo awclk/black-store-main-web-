@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRI TECH SOLUTIONS - Professional Online Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .contact-badge {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+        }
+        
+        .floating-action-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="https://placehold.co/150x50?text=SRI+TECH+SOLUTIONS" alt="Sri Tech Solutions Logo with modern tech design elements in blue and green" class="h-10">
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Services</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button type="button" class="mobile-menu-button p-2 rounded-md text-gray-700 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">Home</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">Services</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Premium Digital Solutions for Your Business</h1>
+                    <p class="text-xl mb-8 opacity-90">Sri Tech Solutions provides cutting-edge digital services to help businesses grow in the online space with our specialized tools and expertise.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#services" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-gray-100 transition duration-300 inline-flex items-center">
+                            Explore Services <i class="fas fa-arrow-down ml-2"></i>
+                        </a>
+                        <a href="#contact" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition duration-300 inline-flex items-center">
+                            Contact Us <i class="fas fa-phone-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://placehold.co/600x400?text=Digital+Solutions" alt="Digital dashboard showing analytics and business growth metrics with colorful charts" class="rounded-xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Premium Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We offer specialized digital solutions to enhance your online presence and business operations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card rounded-xl overflow-hidden bg-white border border-gray-100">
+                    <img src="https://placehold.co/600x400?text=Social+Media" alt="Social media dashboard showing engagement analytics and growth metrics" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-indigo-100 rounded-lg p-2 mr-3">
+                                <i class="fas fa-share-alt text-indigo-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Social Media Boost</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Professional social media growth and engagement services to boost your online presence across all platforms.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">Starting from $25</span>
+                            <a href="https://google.com" class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition duration-200">
+                                GO TO SITE <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card rounded-xl overflow-hidden bg-white border border-gray-100">
+                    <img src="https://placehold.co/600x400?text=WhatsApp" alt="WhatsApp screens showing various messaging features and dashboard" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-green-100 rounded-lg p-2 mr-3">
+                                <i class="fab fa-whatsapp text-green-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">WhatsApp Solutions</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Unbanning and premium WhatsApp services including verified accounts, special features, and mass messaging tools.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">Starting from $15</span>
+                            <a href="https://google.com" class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-200">
+                                GO TO SITE <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card rounded-xl overflow-hidden bg-white border border-gray-100">
+                    <img src="https://placehold.co/600x400?text=Premium+Apps" alt="Smartphone showing premium application dashboards and features" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-purple-100 rounded-lg p-2 mr-3">
+                                <i class="fas fa-mobile-alt text-purple-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Premium Apps</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Access to premium applications with special features, unlocked functionality, and ad-free experiences.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">Starting from $10</span>
+                            <a href="https://google.com" class="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition duration-200">
+                                GO TO SITE <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card rounded-xl overflow-hidden bg-white border border-gray-100">
+                    <img src="https://placehold.co/600x400?text=Web+Development" alt="Developer working on code with multiple screens showing website designs" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-blue-100 rounded-lg p-2 mr-3">
+                                <i class="fas fa-code text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Website Development</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Custom website design and development services tailored to your business needs with responsive designs.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">Starting from $100</span>
+                            <a href="https://google.com" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
+                                GO TO SITE <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card rounded-xl overflow-hidden bg-white border border-gray-100">
+                    <img src="https://placehold.co/600x400?text=V2XRY+Network" alt="Network infrastructure diagram showing connections and data flow" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-orange-100 rounded-lg p-2 mr-3">
+                                <i class="fas fa-network-wired text-orange-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">V2XRY Sri Lanka</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Comprehensive network solutions for all Sri Lankan service providers with special packages and VIP access.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">Custom Pricing</span>
+                            <a href="https://google.com" class="inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition duration-200">
+                                GO TO SITE <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card rounded-xl overflow-hidden bg-white border border-gray-100">
+                    <img src="https://placehold.co/600x400?text=VPS+Services" alt="Server rack in data center with blinking lights and network cables" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-red-100 rounded-lg p-2 mr-3">
+                                <i class="fas fa-server text-red-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">VPS Hosting</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">High-performance virtual private servers with customizable specifications for all your hosting needs.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">Starting from $20/month</span>
+                            <a href="https://google.com" class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-200">
+                                GO TO SITE <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Game Enhancements</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Powerful gaming tools and enhancements for competitive players.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Game Service 1 -->
+                <div class="service-card rounded-xl overflow-hidden bg-white border border-gray-100">
+                    <img src="https://placehold.co/600x400?text=Game+Hacks" alt="Gaming setup with monitors showing game hacks and overlays" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-yellow-100 rounded-lg p-2 mr-3">
+                                <i class="fas fa-gamepad text-yellow-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Premium Game Hacks</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Advanced gaming tools and hacks for competitive advantage in popular titles with regular updates.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">Starting from $30</span>
+                            <a href="https://google.com" class="inline-flex items-center px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition duration-200">
+                                GO TO SITE <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Service 2 -->
+                <div class="service-card rounded-xl overflow-hidden bg-white border border-gray-100">
+                    <img src="https://placehold.co/600x400?text=Cheat+Engine" alt="Cheat engine interface showing game memory addresses and values" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="bg-pink-100 rounded-lg p-2 mr-3">
+                                <i class="fas fa-robot text-pink-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Smart Cheat Systems</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">AI-powered cheat systems that adapt to game updates and anti-cheat measures with built-in bypasses.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">Subscription Based</span>
+                            <a href="https://google.com" class="inline-flex items-center px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition duration-200">
+                                GO TO SITE <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-indigo-800 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="max-w-2xl mx-auto opacity-90">Hear from satisfied customers who have used our premium services.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/100x100?text=John+D" alt="Portrait of John D, satisfied customer smiling" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">John D.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The WhatsApp unban service worked perfectly! Got my business account back within hours. Highly recommend Sri Tech Solutions!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/100x100?text=Sarah+M" alt="Portrait of Sarah M, happy customer in professional attire" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah M.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Their social media boost service increased my Instagram followers by 200% in just one week. Amazing results!"</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/100x100?text=Rajesh+K" alt="Portrait of Rajesh K, smiling businessman" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Rajesh K.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The VPS hosting is incredibly fast and reliable. Their support team is always available to help with any issues."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Contact us for inquiries or to place an order for our premium services.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-gray-50 rounded-xl p-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-lg p-3 mr-4">
+                                    <i class="fas fa-phone-alt text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">Phone</h4>
+                                    <a href="tel:+94771234567" class="text-gray-600 hover:text-indigo-600 transition duration-200">+94 77 123 4567</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-lg p-3 mr-4">
+                                    <i class="fas fa-envelope text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">Email</h4>
+                                    <a href="mailto:info@sritechsolutions.com" class="text-gray-600 hover:text-indigo-600 transition duration-200">info@sritechsolutions.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-lg p-3 mr-4">
+                                    <i class="fab fa-whatsapp text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">WhatsApp</h4>
+                                    <a href="https://wa.me/94771234567" class="text-gray-600 hover:text-indigo-600 transition duration-200">Chat with us</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-lg p-3 mr-4">
+                                    <i class="fas fa-clock text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">Working Hours</h4>
+                                    <p class="text-gray-600">Monday - Saturday: 9AM - 7PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="text-lg font-medium text-gray-800 mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-200 hover:bg-indigo-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-200">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-indigo-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-200">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-indigo-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-200">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="bg-gray-50 rounded-xl p-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Send Us a Message</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200" placeholder="Enter your name">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200" placeholder="Enter your email">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <select id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200">
+                                    <option value="">Select a subject</option>
+                                    <option value="whatsapp">WhatsApp Services</option>
+                                    <option value="social">Social Media Boost</option>
+                                    <option value="vps">VPS Hosting</option>
+                                    <option value="web">Website Development</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200" placeholder="Your message..."></textarea>
+                            </div>
+                            
+                            <div class="pt-2">
+                                <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition duration-200">
+                                    Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Find answers to common questions about our services.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                        <button class="faq-question flex items-center justify-between w-full px-6 py-4 text-left text-gray-800 font-medium">
+                            <span>How long does WhatsApp unbanning take?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 hidden">
+                            <p class="text-gray-600">Most WhatsApp unbans are completed within 1-4 hours, depending on the complexity of your case. We'll notify you immediately once your account is restored.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                        <button class="faq-question flex items-center justify-between w-full px-6 py-4 text-left text-gray-800 font-medium">
+                            <span>Are your social media services safe for my accounts?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 hidden">
+                            <p class="text-gray-600">Yes, we use organic growth methods that comply with platform guidelines. Our approach ensures steady, natural growth without risking your account's security.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                        <button class="faq-question flex items-center justify-between w-full px-6 py-4 text-left text-gray-800 font-medium">
+                            <span>What payment methods do you accept?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 hidden">
+                            <p class="text-gray-600">We accept PayPal, credit/debit cards, bank transfers, and cryptocurrency (Bitcoin, Ethereum). Local Sri Lankan clients can also pay via bank deposits or mobile banking.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 4 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                        <button class="faq-question flex items-center justify-between w-full px-6 py-4 text-left text-gray-800 font-medium">
+                            <span>How quickly can I get my premium apps after ordering?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 hidden">
+                            <p class="text-gray-600">Premium apps are delivered immediately after payment confirmation. You'll receive download links and installation instructions within minutes of completing your purchase.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 5 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                        <button class="faq-question flex items-center justify-between w-full px-6 py-4 text-left text-gray-800 font-medium">
+                            <span>What's your refund policy?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 hidden">
+                            <p class="text-gray-600">We offer refunds for services not delivered as promised within our stated timeframe. Digital products may not be eligible for refunds once delivered. Please review our detailed refund policy for specific service terms.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-gray-600 mb-4">Have more questions?</p>
+                    <a href="#contact" class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition duration-200">
+                        Contact Support <i class="fas fa-headset ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Sri Tech Solutions</h3>
+                    <p class="text-gray-400">Providing premium digital services and solutions to help businesses thrive online.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-200">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-200">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-200">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-200">Social Media Boost</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-200">WhatsApp Solutions</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-200">Premium Apps</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-200">Website Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-200">VPS Hosting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-200">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-200">Services</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-200">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-200">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <address class="not-italic text-gray-400">
+                        <div class="mb-2">
+                            <i class="fas fa-map-marker-alt mr-2 text-indigo-400"></i> Colombo, Sri Lanka
+                        </div>
+                        <div class="mb-2">
+                            <i class="fas fa-phone-alt mr-2 text-indigo-400"></i> +94 77 123 4567
+                        </div>
+                        <div class="mb-2">
+                            <i class="fas fa-envelope mr-2 text-indigo-400"></i> info@sritechsolution.com
+                        </div>
+                        <div>
+                            <i class="fab fa-whatsapp mr-2 text-indigo-400"></i> +94 77 123 4567
+                        </div>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 Sri Tech Solutions. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm mr-4 transition duration-200">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm mr-4 transition duration-200">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-200">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/94771234567" class="floating-action-btn bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition duration-200">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+        
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                question.classList.toggle('active');
+                icon.style.transform = question.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
